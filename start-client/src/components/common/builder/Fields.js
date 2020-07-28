@@ -65,7 +65,7 @@ const Fields = ({
               </div>
             </div>
 
-            <Control text='Spring Boot'>
+            <Control text='Common Dependencies'>
               <Radio
                 name='boot'
                 selected={get(values, 'boot')}
