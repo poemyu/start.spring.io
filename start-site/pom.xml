@@ -10,7 +10,9 @@
 	</parent>
 	<artifactId>start-site</artifactId>
 	<name>start.spring.io website</name>
-
+	<properties>
+		<image.name>public</image.name>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -116,6 +118,20 @@
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
+			<plugin>
+	                <groupId>com.spotify</groupId>
+	                <artifactId>dockerfile-maven-plugin</artifactId>
+	                <configuration>
+	                    <!-- <username>admin</username>
+	                    <password>12345</password> -->
+	                    <repository>192.168.1.101:5000/${image.name}/${project.artifactId}</repository>
+	                    <tag>${project.version}</tag>
+	                    <buildArgs>
+				            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+				        </buildArgs>
+	                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+	                </configuration>
+	        </plugin>
 		</plugins>
 	</build>
 

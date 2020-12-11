@@ -67,17 +67,7 @@ initializr:
           artifactId: croot_framework_starter
           description: 脚手架基础框架，集成了日志，关系型多数据源，缓存，线程池，swagger等组件功能.
           
-        - name: MongoDB
-          id: MongoDB
-          groupId: com.croot
-          artifactId: croot_multimongo_starter
-          description: 多mongoDB支持 .
-       
-        - name: POI
-          id: POI
-          groupId: com.croot
-          artifactId: croot_poi_starter
-          description: 此组件基于Apache POI统一定义读写Excel通用方法.
+
           
     - name: 扩展技术组件
       content:
@@ -85,13 +75,19 @@ initializr:
           id: Security
           groupId: com.croot
           artifactId: croot_security_starter
-          description: 此组件用于集成spring Security和 oauth2的配置使用.
+          description: 此组件用于集成spring Security的配置使用.
        
         - name: Batch
           id: Batch
           groupId: com.croot
           artifactId: croot_batch_starter
           description: 此组件用于集成spring batch的配置使用.
+
+        - name: Statemachine
+          id: Statemachine
+          groupId: com.croot
+          artifactId: croot_statemachine_starter
+          description: 此组件用于集成spring statemachine的配置使用.          
 
         - name: Websocket
           id: Websocket
@@ -105,6 +101,12 @@ initializr:
           artifactId: croot_monitor_starter
           description: 此组件用于监控后台日志及服务情况.
           
+        - name: Preview
+          id: Preview
+          groupId: com.croot
+          artifactId: croot_preview_starter
+          description: 此组件用于在线文档（暂支持markdown）的配置使用.          
+          
         - name: Redis
           id: Redis
           groupId: com.croot
@@ -116,6 +118,68 @@ initializr:
           groupId: com.croot
           artifactId: croot_storage_starter
           description: 此组件用于定义文件上传下载的配置使用.
+          
+        - name: MongoDB
+          id: MongoDB
+          groupId: com.croot
+          artifactId: croot_multimongo_starter
+          description: 多mongoDB支持 .
+       
+        - name: POI
+          id: POI
+          groupId: com.croot
+          artifactId: croot_poi_starter
+          description: 此组件基于Apache POI统一定义读写Excel通用方法.      
+          
+        - name: Ldap
+          id: Ldap
+          groupId: com.croot
+          artifactId: croot_ldap_starter
+          description: 此组件用于远程ldap server认证的配置.   
+          
+        - name: OAuth2 Server
+          id: OAuth2 Server
+          groupId: com.croot
+          artifactId: croot_oauth2_server_starter
+          description: 此组件用于集成OAuth2 Server的配置.   
+          
+        - name: OAuth2 Resource
+          id: OAuth2 Resource
+          groupId: com.croot
+          artifactId: croot_oauth2_resource_starter
+          description: 此组件用于集成OAuth2 Resource的配置. 
+          
+        - name: OAuth2 Client
+          id: OAuth2 Client
+          groupId: com.croot
+          artifactId: croot_oauth2_client_starter
+          description: 此组件用于集成OAuth2 Client的配置.                                            
+
+    - name: Cloud技术组件
+      content:
+        - name: Eureka
+          id: Eureka
+          groupId: com.croot
+          artifactId: croot_cloud_eureka_client_starter
+          description: 此组件用于集成Eureka服务.
+          
+        - name: Consul
+          id: Consul
+          groupId: com.croot
+          artifactId: croot_cloud_consul_starter
+          description: 此组件用于集成Consul服务.
+          
+        - name: Zookeeper
+          id: Zookeeper
+          groupId: com.croot
+          artifactId: croot_cloud_zookeeper_starter
+          description: 此组件用于集成Zookeeper服务.          
+   
+        - name: Nacos
+          id: Nacos
+          groupId: com.croot
+          artifactId: croot_cloud_nacos_starter
+          description: 此组件用于集成Nacos服务.                    
 
     - name: 公共业务组件
       content:
@@ -165,15 +229,15 @@ initializr:
       id: java
       default: true
   bootVersions:
-    - name : 2.2.6(SNAPSHOT)
-      id: 2.2.6-SNAPSHOT
-      default: false
-    - name : 2.2.5.RELEASE
-      id: 2.2.5.RELEASE
+    - name : 2.3.0(SNAPSHOT)
+      id: 2.3.0-SNAPSHOT
       default: true
-    - name : 2.2.4.RELEASE
-      id: 2.2.4.RELEASE
-      default: false
+#    - name : 2.2.5.RELEASE
+#      id: 2.2.5.RELEASE
+#      default: true
+#    - name : 2.2.4.RELEASE
+#      id: 2.2.4.RELEASE
+#      default: false
 
 ---
 
